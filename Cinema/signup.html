@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <img src="imgs/bg.jpg" id="bg" alt="">
+    <!-- ========= Navbar ========= -->
+    <div id="navbar" class="navbar">
+        <a class="nav-item" href="index.html" style="font-weight: bold;font-size: 20px;color: red;">Cinema</a>
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="signin.html">Sign In</a>
+        <a class="nav-item" href="signup.html"u>Sign Up</a>
+        <a class="nav-item" href="about.html">About</a>
+    </div>
+
+    <!-- ========= Sign Up Form ========= --> 
+    
+    <div id="signup">
+      <form class="regform" action="regdone.html" method="post" id="form1">
+        <table style="padding: 10px;">
+          <tr>
+            <td class="incol">
+              <div class="reghl">
+                <h1>Sign Up</h1>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="incol"> <input type="text"  required placeholder="Name" ></td>
+          </tr>
+          <tr>
+            <td class="incol"> <input type="email"  required placeholder="Email"></td>
+          </tr>
+          <tr>
+            <td class="incol"><input type="password" required placeholder="Password"></td>
+          </tr>
+          <tr>
+            <td>
+              <h4><a href="#" >Ask for Help</a></h4>
+              <br>
+
+              <h4 style="margin-top: -14px;"> <a href="signin.html" >Already have account</a></h4>  
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <button type="submit" form="form1" name="button">CONFIRM</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <!-- ========= Footer ========= -->
+
+     <div class="footer">
+        <div class="watch-list">
+            <h2>Watch</h2>
+            <ul class="watchl-listUl">
+                <li>Series</li>
+                <li>Movies</li>
+                <li>Documentaries</li>
+            </ul>
+        </div>
+
+        <div class="account-list">
+            <h2>Account</h2>
+            <ul class="account-listUl">
+                <li>Sign Up</li>
+                <li>Sign In</li>
+                <li>Upgrade</li>
+            </ul>
+        </div>
+        <div class="socialmedia">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/" target = "_blank">
+                        <i class="fa fa-facebook-square" ></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-vimeo-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                
+            </ul>
+        </div>
+        <div class="important">
+        <ul>
+            
+            <li><a href="#">Terms and Conditions</a></li> 
+            <li><a href="#">Privacy</a></li> 
+            <li><a href="#">Legal Notices</a></li>
+        </ul>
+        </div>
+        
+      </div>
+    <script>
+
+         //Navbar sticky function
+    window.onscroll = function() {myFunction()};
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+    }
+
+    </script>
+
+
+</body>
+</html>

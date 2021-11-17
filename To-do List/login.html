@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #73C259;
+        }
+        .container {
+            width: 400px;
+            min-height: 200px;
+            background-color: white;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            padding: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            display: block;
+            width: 360px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: lightgrey;
+            border: 0px;
+            padding: 10px;
+        }
+
+        button{
+            display: block;
+            width: 360px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #00B242;
+            border: 0px;
+            color: white;
+            font-weight: lighter;
+        }
+        button:hover{
+             filter: brightness(0.85);
+        }
+        p {
+            text-align: center;
+            color: gray;
+            
+        }
+        a {
+            text-decoration: none;
+            color :#73C259;
+        }
+        a:hover{
+             filter: brightness(0.85);
+        }
+        .title {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgba(2, 46, 8, 0.795);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1 class="title">To-Do List App</h1>
+        <input placeholder="Username" id="username" type="text">
+        <input placeholder="Password" id="password" type="password">
+        <button onclick="login()">LOGIN</button>
+        <p>
+            Not registered? <a href="">Create an account</a>
+        </p>
+    </div>
+
+    <script>
+        
+        function login() {
+            var userinput = document.getElementById("username").value;
+            var passinput = document.getElementById("password").value;
+        
+            if (userinput == "admin" && passinput == "123") {
+                window.location.href = "newtodolist.html";
+            } else {
+                alert("Worng Credentials")
+            }               
+        }
+            
+            
+    </script>
+    
+</body>
+
+
+</html>

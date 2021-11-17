@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <img src="imgs/bg.jpg" id="bg" alt="">
+    <!-- ========= Navbar ========= -->
+    <div id="navbar" class="navbar">
+        <a class="nav-item" href="index.html" style="font-weight: bold;font-size: 20px;color: red;">Cinema</a>
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="signin.html">Sign In</a>
+        <a class="nav-item" href="signup.html"u>Sign Up</a>
+        <a class="nav-item" href="about.html">About</a>
+    </div>
+    <!-- ========= First Section: Offer, Gallery ========= -->
+    <div class="main">
+        <div id="column1" class="column">
+            <div class="offer">
+                <h1>30% OFF*</h1>
+                <h6>* limited time offer ends 30 September 2021</h6>
+            </div>
+            <div class="btn-container">
+                <button class="signup-btn" >
+                    <a class="signup-btna" href="signp.html">SIGN UP</a>
+                </button>
+            </div>
+        </div>
+        <div id="column2" class="column">
+            <h2>Recommended to Watch</h2>
+            <div class="gallery">
+                <div>
+                    <img src="imgs\movies\1.jpg" alt="">
+                    <p>Avengers: Infinity War</p>
+                </div>
+                <div>
+                    <img src="imgs\movies\2.jpg" alt="">
+                    <p>Jurassic Park</p>
+                </div>
+                <div>
+                    <img src="imgs\movies\3.jpg" alt="">
+                    <p>Pulp Fiction</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- ========= Second Section: Animated Slider ========= -->
+
+        <div class="slideshow-container">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus rem explicabo, 
+                voluptas exercitationem quidem. Reiciendis neque voluptatibus dolore ipsam quisquam 
+                dicta atque qui facilis, nesciunt a. Rerum, nulla assumenda.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus rem explicabo, 
+                voluptas exercitationem quidem. Reiciendis neque voluptatibus dolore ipsam quisquam 
+                dicta atque qui facilis, nesciunt a. Rerum, nulla assumenda.
+                
+            </p>
+            <div class="slides">
+                <div class="mySlides">
+                    <img src="imgs\movies\1.jpg">
+                </div>
+                
+                <div class="mySlides">
+                    <img src="imgs\movies\2.jpg">
+                </div>
+                
+                <div class="mySlides">
+                    <img src="imgs\movies\3.jpg">
+                </div>
+
+                <div class="mySlides">
+                    <img src="imgs\movies\4.jpg">
+                </div>
+            </div>
+            
+        </div>
+    <!-- ========= Footer ========= -->
+
+    <div class="footer">
+        <div class="watch-list">
+            <h2>Watch</h2>
+            <ul class="watchl-listUl">
+                <li>Series</li>
+                <li>Movies</li>
+                <li>Documentaries</li>
+            </ul>
+        </div>
+
+        <div class="account-list">
+            <h2>Account</h2>
+            <ul class="account-listUl">
+                <li>Sign Up</li>
+                <li>Sign In</li>
+                <li>Upgrade</li>
+            </ul>
+        </div>
+        <div class="socialmedia">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/" target = "_blank">
+                        <i class="fa fa-facebook-square" ></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target = "_blank">
+                        <i class="fa fa-vimeo-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                
+            </ul>
+        </div>
+        <div class="important">
+        <ul>
+            
+            <li><a href="#">Terms and Conditions</a></li> 
+            <li><a href="#">Privacy</a></li> 
+            <li><a href="#">Legal Notices</a></li>
+        </ul>
+        </div>
+        
+      </div>
+
+    
+        
+        
+<script>
+    
+    //Navbar sticky function
+    window.onscroll = function() {myFunction()};
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+    }
+
+    //Slider
+    var slideIndex = 0;
+    showSlides();
+    function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); 
+    }
+        
+
+
+    </script>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,357 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    color: white;
+    background-color: #141414;
+
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    opacity: 0.5;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -10;
+    filter: blur(4px);
+  }
+
+
+/* ========== navbar ============= */
+.navbar {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.782);    
+    width: 100%;
+    align-items: center;
+}
+
+
+.nav-item {
+    flex-basis: 70px;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.nav-item:hover {
+    background-color: rgb(255, 136, 0);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.sticky + .main {
+    margin-top: 65px;
+  }
+
+.sticky + .regform {
+    margin-top: 65px;
+  }
+
+.sticky + .about {
+    margin-top: 90px;
+  }
+
+ /* ========= First Section: Offer, Gallery =========  */
+  .main {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 2fr ;
+    padding: 0 20px 20px 20px;
+}
+
+.column{
+    padding: 20px;
+    text-align: center;
+    place-self: center stretch;
+    
+}
+
+#column1 {
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.851); 
+}
+
+
+
+.offer {
+    width: 100%;
+    margin: auto;
+}
+.offer h3 {
+    font-size: 50px;
+    margin: 0;
+}
+.offer h1 {
+    margin: -20 ;
+    font-weight: 700;
+    color: red;
+    font-size: 70px;
+}
+.offer h6 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.signup-btn {
+    width: 200px;
+    height: 50px;
+    font-size: large;
+    border: 0px;
+    border-radius: 4px;
+    background-color: red;
+    
+}
+
+.signup-btna {
+    color: white;
+    text-decoration: none; 
+    font-family: 'Cairo', sans-serif;
+
+}
+.signup-btn:hover {
+    background-color: rgb(255, 136, 0)
+}
+
+.btn-container {
+    margin: 20px;
+    margin-bottom: 5px;
+}
+#column2{
+padding-top: 20px;
+}
+#column2 h2{
+    text-align: left;
+    font-size: 40px;
+}
+
+.gallery img {
+    height: 350px;
+    padding: 5px;
+    
+}
+.gallery div{
+    display: inline-block;
+}
+.gallery div:hover > img{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+.gallery div:hover > p{
+    transform: translateY(10px);
+    visibility: visible;
+    transition: transform 0.5s;
+}
+.gallery p{
+    visibility: hidden;
+    text-align: center;
+}
+
+ /* ========= Second Section: Animated Slider =========  */
+
+ .slideshow-container {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+ }
+
+ .slideshow-container p {
+    flex-basis: 800px;
+    font-size: 26px;
+    padding: 20px;
+    margin: 10px;
+    
+ }
+ .slides{
+     margin:auto;
+ }
+ .mySlides {
+    display: none;
+
+}
+.mySlides img {
+    width: 350px;
+}
+
+ /* ========= Footer =========  */
+
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 300px 300px auto;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "watch-list account-list socialmedia"
+      "watch-list account-list important";
+  }
+.footer li {
+      list-style-type: none;
+      font-size: 20px;
+  }
+
+.watch-list { 
+    grid-area: watch-list; 
+    justify-self: center; 
+    align-self: top; 
+
+}
+
+.watch-list li:hover{
+    color: darkcyan;
+    cursor: pointer;
+}
+.account-list { 
+    grid-area: account-list;
+    justify-self: center; 
+    align-self: top; 
+
+}
+
+.account-list li:hover{
+    color: darkcyan;
+    cursor: pointer;
+}
+
+
+.socialmedia { 
+    grid-area: socialmedia; 
+    justify-self: center; 
+    align-self: center; 
+}
+
+.socialmedia li {
+    display: inline;
+    text-decoration: none;
+
+}
+
+
+.socialmedia i {
+    font-size: 50px;
+    color: white;
+    margin: 20px;
+    font-style: none;
+}
+
+.socialmedia i:hover {
+   color: darkcyan;
+}
+  
+.important { 
+    grid-area: important; 
+    justify-self: center; 
+    align-self: center; 
+}
+
+.important li {
+    display: inline;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.important a:hover{
+    color: darkcyan;
+}
+  
+
+
+/* Form Page styling */
+
+.regform {
+    width:600px;
+    margin-top: 30px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.751); 
+    
+  }
+
+.sticky + #signup {
+    margin-top: 100px;
+}
+
+  .regform table{
+      margin: auto;
+  }
+  .reghl h1{
+    color: white;
+    margin: 0;
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .regform h4{
+    font-weight: lighter;
+    display: inline;
+}
+
+  .regform input {
+      width: 300px;
+      height: 50px;
+      text-align: center;
+      background-color: rgb(83, 75, 75);
+      border: 0px;
+      color: white;
+      font-size: 20px;
+      font-family:'Cairo', sans-serif ;
+      border-radius: 4px;
+      margin: 10px;
+  }
+
+
+.regform button {
+    color: white;
+    text-decoration: none; 
+    font-family: 'Cairo', sans-serif;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: red;
+    margin: 10px;
+
+}
+.regform button:hover {
+    background-color: rgb(255, 136, 0)
+}
+
+
+
+/* About */
+
+.about {
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.751); 
+}

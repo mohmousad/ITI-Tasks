@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+    background-color: #73C259;
+    font-family: Arial, Helvetica, sans-serif
+}
+.container {
+    width: 400px;
+    min-height: 200px;
+    background-color: f5f5f5;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    box-shadow: 0 0 10px gray;
+    
+}
+.tasklist {
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: lightgrey 1px solid;
+    border-radius: 4px;
+    background-color: white;
+}
+.task {
+    height: 40px;
+    border-bottom: solid lightgrey 1px;
+    padding: 1px;
+}
+
+
+.taskname {
+    margin: 10px;
+    float:left;
+    padding:0;
+    height: 20;
+    font-family: Arial, Helvetica, sans-serif
+}
+.btn1{
+    float:right;
+    border: 0.5px solid grey;
+    border-radius: 2px;
+    background-color: white;
+    margin: 10px;
+    height: 20;
+    width: 60px;
+    background-color: 5cb85c;
+}
+
+.btn1:hover{
+    filter: brightness(0.85);
+    
+}
+.btn2{
+    float:right;
+    border: 0.5px solid grey;
+    border-radius: 2px;
+    background-color: white;
+    margin: 10px;
+    height: 20;
+    width: 60px;
+}
+
+.btn2:hover{
+    filter: brightness(0.85);
+}
+
+.divadd {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    height: 50px;
+    padding: 0;
+    
+    
+}
+.addbtn {
+    float:right;
+    background-color: 62adee;
+    border: 0.5px solid grey;
+    border-radius: 4px;
+    height: 30px;
+    width: 70px;
+    vertical-align: middle;
+    margin: 10px;
+}
+.addbtn:hover{
+    filter: brightness(0.85);
+}
+.label{
+    height: 30px;
+    margin: 5px;
+}
+input {
+    height: 20px;
+    margin: 15px 0px;
+    width: 200px;
+}
+
+.done{
+
+    background-color: rgb(77, 221, 89);
+    border: rgb(56, 214, 135);
+    border-radius: 5px;
+    opacity: 0.5;
+  
+}
+
+#notasks{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: rgba(2, 46, 8, 0.795);
+
+}
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div>
+                <ul class="tasklist" id="tasklist">
+                    <h2 id="notasks">No Tasks.</h2>
+                    <!-- <li class="task">
+                        <span class="taskname">Task 1</span>
+                        <button class="btn1">Done</button>
+                        <button onclick="done()" class="btn2">Delete</button>
+                    </li>  -->
+                </ul>
+            </div>
+            <br>
+            <div class="divadd">
+                <span class="form">
+                    <span class="label">Task</span>
+                    <input id="newinput" type="text" placeholder="Type your task here">
+                </span> 
+                <button id="addbtn" class="addbtn" onclick="add()">Add</button>
+            </div>
+        </div>
+        <script>
+            var tasks = []
+            
+            function displaytask(){
+                var tasksmaped = tasks.map(function(item){
+                    var liclass = "task" 
+                    if(item.done) liclass= liclass+ " done";
+                    return "<li class='"+liclass+"'><span class='taskname'>"+item.taskname+"</span><button class='btn1' onclick='done(\""+item.taskname+"\")'>Done</button><button onclick='deleteTask(\""+item.taskname+"\")' class='btn2'>Delete</button></li>"
+                    //return "<li class='task'><span class='taskname'>"+item.taskname+"</span><button class='btn1'>Done</button><button class='btn2'>Delete</button></li>"
+                })
+                var htmltasksmaped = tasksmaped.join("")
+                var tasklist = document.getElementById("tasklist")
+                tasklist.innerHTML = htmltasksmaped
+                
+            }
+
+            function add(){
+                var newinput = document.getElementById("newinput");
+                var task={
+                    taskname: newinput.value,
+                    done:false
+                }
+                tasks.push(task);
+                newinput.value=""
+                displaytask()
+            }
+
+            function deleteTask(tasktext){
+            var taskIndex = tasks.findIndex(function(element){
+                return element.taskname == tasktext;
+            });
+            tasks.splice(taskIndex,1);
+            displaytask();
+            if (tasks.length == 0) {
+                   document.getElementById("tasklist").innerHTML = "<h2 id='notasks'>No Tasks.</h2>"
+                }
+            }
+            
+
+            function done(tasktext){
+                var task = tasks.find(function(item)
+                {
+                    return item.taskname == tasktext
+                })
+                task.done =! task.done
+                displaytask()
+                console.log(tasks)
+            }
+
+            var input = document.getElementById("newinput");
+            input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("addbtn").click();
+            }
+            });
+
+            
+            
+        </script>
+</body>
+</html>
